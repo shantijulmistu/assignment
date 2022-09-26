@@ -1,51 +1,35 @@
-.login-title {
-    text-align: center;
-}
-
-.login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    color: lightslategray;
-}
-
 .form {
-    background-color: lightgrey;
-    padding: 50px 200px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px gray;
-}
-
-label {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-input {
-    border: 1px solid lightgrey;
-    border-radius: 5px;
-    padding: 15px 100px;
-    text-align: left;
-    margin-top: 10px;
-    font-size: 20px;
-}
-
-.input-group {
-    margin-top: 10px;
-}
-
-.login-btn {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+}
+form {
+    background-color: gray;
+    padding: 50px;
+    border-radius: 10px;
+}
+label {
+    display: block;
+        font-size: 24px;
+        color: lightgrey;
+        font-weight: bold;
+}
+input {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px 5px;
+}
+.input-container>input {
+    width: 100%;
 }
 
-.login-btn>button {
-    padding: 15px 100px;
-    border: 1px solid chocolate;
-    border-radius: 5px;
-    color: white;
-    background-color: chocolate;
+.button-container {
+    margin-top: 10px;
+}
+.button-container>input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
     font-size: 20px;
+    color: black;
 }
