@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.css';
 import { getAuth } from "firebase/auth";
 import app from './../../firebase';
@@ -13,7 +13,7 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
-    const [signInWithEmailAndPassword, error, user] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, error] = useSignInWithEmailAndPassword(auth);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -23,13 +23,16 @@ const Login = () => {
         createUserWithEmailAndPassword(email, password);
         alert('Successfully create an account');
     }
-
+    useEffect(() => {
+        if (user) {
+            console.log(user)
+            navigate(from, { replace: true });
+        }
+    }, [user, from, navigate]);
     if (error) {
         return <p>{error.message}</p>;
     }
-    if (user) {
-        navigate(from, { replace: true });
-    }
+
 
     const signIn = () => {
         signInWithEmailAndPassword(email, password);
